@@ -24,6 +24,7 @@ public class WebConfiguration {
 				authorizeRequest
 					.requestMatchers(
 						AntPathRequestMatcher.antMatcher("/swagger-ui/**/**"),
+						AntPathRequestMatcher.antMatcher("/h2-console/**"),
 						AntPathRequestMatcher.antMatcher("/basic/**"),
 						AntPathRequestMatcher.antMatcher("/v3/api-docs/**/**")
 					).permitAll()
