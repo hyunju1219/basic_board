@@ -1,7 +1,7 @@
 package com.board.basic.board.domain.web.board.service;
 
 import com.board.basic.board.domain.web.board.dto.req.BoardRequestDto;
-import com.board.basic.board.domain.web.board.entity.repository.BoardRepository;
+import com.board.basic.board.domain.web.board.entity.repository.BoardMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class BoardService {
 
     @Autowired
-    private BoardRepository boardRepository;
+    private BoardMapper boardMapper;
 
 	// 게시판 목록 조회
 
@@ -17,7 +17,7 @@ public class BoardService {
 
 	// 게시판 등록
     public void addBoard(BoardRequestDto dto) {
-
+        boardMapper.save(dto.toEntity());
     }
 	// 게시판 수정
 

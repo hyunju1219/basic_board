@@ -11,4 +11,5 @@ spring:
 
 #참고 사이트: https://velog.io/@ohjs813/Spring-Boot-Mybatis
 mybatis:
-  mapper-locations: mapper/*.xml
+  type-aliases-package: com.board.basic.board.domain.web.board.entity.repository
+  mapper-locations: classpath:mapper/*.xml
