@@ -8,4 +8,40 @@
         insert into board_tb
         values(default, #{title}, #{content}, #{author})
     </insert>
+    <update id="updateBoard">
+        update board_tb
+        set
+            title = #{title},
+            content = #{content},
+            author = #{author}
+        where
+            id = #{id}
+    </update>
+    <delete id="deleteBoardById">
+        delete
+        from
+            board_tb
+        where
+            id = #{id}
+    </delete>
+    <select id="findBoardById" resultType="com.board.basic.board.domain.web.board.entity.Board">
+        select
+            id,
+            title,
+            content,
+            author
+        from
+            board_tb
+        where
+            id = #{id}
+    </select>
+    <select id="findAllBoard" resultType="com.board.basic.board.domain.web.board.entity.Board">
+        select
+            id,
+            title,
+            content,
+            author
+        from
+            board_tb
+    </select>
 </mapper>
